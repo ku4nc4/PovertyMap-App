@@ -15,3 +15,5 @@ build/
 \.idea/vcs\.xml
 
 \.idea/workspace\.xml
+
+easy_eat_android\.iml
