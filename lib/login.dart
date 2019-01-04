@@ -69,14 +69,14 @@ class LoginWidget extends StatelessWidget{
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Hero(child: new Image.asset('assets/atass_01.png'), tag: 'bawah',),
+              Hero(child: new Image.asset('assets/atass_01.png'), tag: 'atas',),
               new Expanded(
                 child: new SizedBox(
                   child: new Center(
                     child: new Column(
                       children: <Widget>[
                         Hero(child: new Image.asset("assets/c_04.png",height: 200.0,),tag: 'logo',),
-                        new Text('login')
+                        new TextFormField(decoration: InputDecoration(hintText: 'Email'),)
                       ],
                     ),
                   ),
@@ -85,7 +85,7 @@ class LoginWidget extends StatelessWidget{
               new Stack(
                 alignment: Alignment.bottomRight,
                 children: <Widget>[
-                  Hero(child: new Image.asset('assets/bawah_02.png'),tag: 'atas',),
+                  Hero(child: new Image.asset('assets/bawah_02.png'),tag: 'bawah',),
 //                  FlatButton(
 //                    child: Padding(
 //                      padding: const EdgeInsets.only(bottom:40.0,right: 40.0),
