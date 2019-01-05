@@ -8,4 +8,12 @@ build/
 
 .flutter-plugins
 
+\.idea/libraries/Dart_Packages\.xml
+
+\.idea/libraries/Dart_SDK\.xml
+
+\.idea/vcs\.xml
+
 \.idea/workspace\.xml
+
+easy_eat_android\.iml
