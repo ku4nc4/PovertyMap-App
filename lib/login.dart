@@ -76,7 +76,7 @@ class LoginWidget extends StatelessWidget{
                     child: new Column(
                       children: <Widget>[
                         Hero(child: new Image.asset("assets/c_04.png",height: 200.0,),tag: 'logo',),
-                        new Text('login')
+                        new TextFormField(decoration: InputDecoration(hintText: 'Email'),)
                       ],
                     ),
                   ),

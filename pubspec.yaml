@@ -26,8 +26,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/atass_01.png
-    - assets/bawah_02.png
+    - assets/skak.png
     - assets/c_04.png
     - assets/s_03.png
 
