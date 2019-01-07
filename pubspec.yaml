@@ -2,6 +2,7 @@ name: easy_eat
 description: A new Flutter application.
 
 dependencies:
+  google_maps_flutter: ^0.0.3+3
   flutter:
     sdk: flutter
 

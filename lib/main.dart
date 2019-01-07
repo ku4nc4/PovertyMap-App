@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'map.dart';
 
 void main() => runApp(new MyApp());
 
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: new Image.asset('assets/s_03.png', height: 80.0,),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginWidget()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>MapView()));
               },
             ),
             new Center(
