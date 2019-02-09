@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: new Image.asset('assets/s_03.png', height: 80.0,),
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>MapView()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>MapsDemo()));
               },
             ),
             new Center(
