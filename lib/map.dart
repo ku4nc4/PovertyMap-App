@@ -25,11 +25,9 @@ class _MapViewState extends State<MapView> {
         ),
         body: GoogleMap(
           onMapCreated: _onMapCreated,
-          options: GoogleMapOptions(
-            cameraPosition: CameraPosition(
+          initialCameraPosition: CameraPosition(
               target: _center,
               zoom: 11.0,
-            ),
           ),
         ),
       ),
