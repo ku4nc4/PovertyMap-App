@@ -17,3 +17,5 @@ build/
 \.idea/workspace\.xml
 
 easy_eat_android\.iml
+
+pubspec\.lock
