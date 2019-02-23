@@ -10,6 +10,7 @@ class MapView extends StatefulWidget {
 
 class _MapViewState extends State<MapView> {
   GoogleMapController mapController;
+
 //  LatLng _center = const LatLng(-6.2717416,106.5642999);
   var location = new Location();
 
@@ -20,13 +21,12 @@ class _MapViewState extends State<MapView> {
     super.initState();
   }
 
-  Future<LatLng> ambilLocation() async{
-  Position currentLocation;
-  currentLocation = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
+  Future<LatLng> ambilLocation() async {
+    Position currentLocation;
+    currentLocation = await Geolocator().getCurrentPosition();
 
-  return LatLng(currentLocation.latitude,currentLocation.longitude);
-}
-
+    return LatLng(currentLocation.latitude, currentLocation.longitude);
+  }
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -37,26 +37,38 @@ class _MapViewState extends State<MapView> {
     return MaterialApp(
       home: FutureBuilder<LatLng>(
         future: ambilLocation(),
-        builder: (context,AsyncSnapshot<LatLng> snapshot){
-          switch(snapshot.connectionState){
-            case ConnectionState.done : return Scaffold(
-              appBar: AppBar(
-                title: Text('Maps Sample App'),
-                backgroundColor: Colors.green[700],
-              ),
-              body: GoogleMap(
-                onMapCreated: _onMapCreated,
-                initialCameraPosition: CameraPosition(
-                  target: snapshot.data,
-                  zoom: 11.0,
+        builder: (context, AsyncSnapshot<LatLng> snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.done:
+              return Scaffold(
+                appBar: AppBar(
+                  title: Text('Maps Sample App'),
+                  backgroundColor: Colors.green[700],
                 ),
-              ),
-            );
-            case ConnectionState.active : return new Container(width: 0.0, height: 0.0,);
-            case ConnectionState.none : return new Container(width: 0.0, height: 0.0,);
-            case ConnectionState.waiting : return new Container(width: 0.0, height: 0.0,);
+                body: GoogleMap(
+                  onMapCreated: _onMapCreated,
+                  initialCameraPosition: CameraPosition(
+                    target: snapshot.data,
+                    zoom: 11.0,
+                  ),
+                ),
+              );
+            case ConnectionState.active:
+              return new Container(
+                width: 0.0,
+                height: 0.0,
+              );
+            case ConnectionState.none:
+              return new Container(
+                width: 0.0,
+                height: 0.0,
+              );
+            case ConnectionState.waiting:
+              return new Container(
+                width: 0.0,
+                height: 0.0,
+              );
           }
-
         },
       ),
     );
@@ -69,7 +81,6 @@ class MapsDemo extends StatefulWidget {
 }
 
 class MapsDemoState extends State<MapsDemo> {
-
   GoogleMapController mapController;
 
   @override
@@ -85,7 +96,8 @@ class MapsDemoState extends State<MapsDemo> {
               height: 500.0,
               child: GoogleMap(
                 onMapCreated: _onMapCreated,
-                initialCameraPosition: new CameraPosition(target: new LatLng(-6.2717416,106.5642999)),
+                initialCameraPosition: new CameraPosition(
+                    target: new LatLng(-6.2717416, 106.5642999)),
               ),
             ),
           ),
@@ -109,7 +121,8 @@ class MapsDemoState extends State<MapsDemo> {
   }
 
   void _onMapCreated(GoogleMapController controller) {
-    setState(() { mapController = controller; });
+    setState(() {
+      mapController = controller;
+    });
   }
 }
-
